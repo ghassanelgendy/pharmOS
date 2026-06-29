@@ -39,3 +39,11 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{matrix.language}}"
+          upload: never
+
+      - name: Upload CodeQL SARIF Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-sarif-${{ matrix.language }}
+          path: ${{ github.workspace }}/../results
+
