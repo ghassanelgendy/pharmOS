@@ -45,5 +45,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: codeql-sarif-${{ matrix.language }}
-          path: ${{ github.workspace }}/../results
+          path: ${{ runner.workspace }}/results
 
